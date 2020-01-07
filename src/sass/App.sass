@@ -1,0 +1,54 @@
+@import './_reset.sass'
+
+.main
+    font-family: 'Lato',sans-serif
+    background-color: #5781E9
+    color: white
+    min-height: 160px
+    &__title
+        font-size: 28px
+        padding-top: 20px
+        margin: 0 auto
+        text-align: center
+        font-weight: bold
+    &__description
+        text-align: center
+        margin-top: 10px
+        font-size: 16px
+    &__container
+        height: 30px
+        background-color: green
+        width: 300px
+        margin: 20px auto 0 auto
+        display: flex
+        flex-direction: row
+        line-height: 30px
+        .main__serverName
+            width: 65px
+            background-color: #ECF2FF
+            color: #5383E8
+            display: inline-block
+            padding: 0 10px
+            border: 1px solid white
+            border-top-left-radius: 5px
+            border-bottom-left-radius: 5px
+        .main__input
+            width: 180px
+            border: none
+            padding-left: 5px
+            &::placeholder
+                font-size: 14px
+        .main__button
+            flex-grow: 1
+            border: none
+            background-color: #ECF2FF
+            border-top-right-radius: 5px
+            border-bottom-right-radius: 5px
+            color: #5383E8
+            font-weight: bold
+
+.server__response
+    text-align: center
+    font-size: 18px
+    margin-top: 20px
+    font-weight: bold
