@@ -1,5 +1,58 @@
 .summonerIcon 
-    height: 180px
+    height: 120px
     width: 98%
     margin: 10px auto
-    background-color: blue
+    position: relative
+    &__iconContainer
+        height: 80px
+        width: 80px
+        position: absolute
+        top: 12px
+        left: 12px
+        .summonerIcon__iconImage
+            width: 75px
+            height: 75px
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%,-50%)
+        .summonerIcon__borderImage
+            position: absolute
+            max-width: 110%
+            height: 110%
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%,-50%)
+        .summonerIcon__level
+            position: absolute
+            bottom: -18px
+            left: 50%
+            transform: translateX(-50%)
+            text-align: center
+            width: 35px
+            border-radius: 15px
+            background-color: black
+            color: white
+            font-size: 14px
+            border: 1px solid white
+            box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75)
+    &__statsContainer
+        height: 70px
+        min-width: 170px
+        position: absolute
+        top: 50%
+        left: 120px
+        transform: translateY(-50%)
+        text-align: center
+        .summonerIcon__nickname
+            font-size: 24px
+            font-weight: bold
+            margin-bottom: 10px
+        .summonerIcon__rankImage
+            height: 20px
+            width: 20px 
+        .summonerIcon__stats
+            display: inline-block
+            margin-left: 5px
+            color: grey
