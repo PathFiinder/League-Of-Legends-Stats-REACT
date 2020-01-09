@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../sass/SummonerRankedStats.sass'
+import '../../sass/SummonerRankedStats.sass'
 import SummonerRankedStatsSingle from './SummonerRankedStatsSingle.js'
 
 class SummonerRankedStats extends Component {
@@ -21,7 +21,7 @@ class SummonerRankedStats extends Component {
                                    "queueType": ele.queueType, 
                                    "tier": ele.tier, 
                                    "rank": ele.rank, 
-                                   "points:" : ele.leaguePoints,
+                                   "points" : ele.leaguePoints,
                                    "wins": ele.wins,
                                    "losses": ele.losses})
                 )

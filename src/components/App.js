@@ -6,7 +6,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nickname: "",
+      nickname: "TheWanh3da", //""
       region: "eun1",
       status: 404,
       serverResp: "",
@@ -14,12 +14,12 @@ class App extends Component {
       profileIcons: [],
       summonerData: []
     };
-    this.apiKey = "RGAPI-d945bec2-3ee1-448d-bd14-2bd735c57da7";
+    this.apiKey = "RGAPI-c7567da9-7048-4283-9673-600c758d8330";
     this.cors = "https://cors-anywhere.herokuapp.com/";
   }
 
   componentDidMount() {
-    fetch("https://ddragon.leagueoflegends.com/api/versions.json")
+    fetch(`http://ddragon.leagueoflegends.com/api/versions.json`)
       .then(response => response.json())
       .then(data =>
         fetch(

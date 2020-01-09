@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../sass/SummonerIcon.sass'
+import '../../sass/SummonerIcon.sass'
 
 class SummonerIcon extends Component {
     constructor(props) {
