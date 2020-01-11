@@ -1,0 +1,33 @@
+.summonerHistoryGames
+    min-height: 100px
+    width: 98%
+    margin: 0 auto
+    position: relative
+    display: flex
+    flex-direction: column
+    flex-wrap: nowrap
+    margin-top: 5px
+    border: 1px solid black
+    .summonerHistoryGames__container
+        width: 120px
+        display: flex
+        flex-direction: row
+        margin: 5px 0 0 5px
+        .summonerHistoryGames__button
+            flex-basis: 50%
+            background-color: transparent
+            border: none
+            text-transform: uppercase
+            font-size: 14px
+            font-weight: bold
+            &--active
+                position: relative
+                &:after
+                    content: ""
+                    position: absolute
+                    bottom: -2px
+                    left: 50%
+                    transform: translateX(-50%)
+                    height: 2px
+                    width: 90%
+                    background-color: gold

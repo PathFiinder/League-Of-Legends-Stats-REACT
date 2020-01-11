@@ -12,9 +12,10 @@ class App extends Component {
       serverResp: "",
       patchVersion: "",
       profileIcons: [],
-      summonerData: []
+      summonerData: [],
+      champNames: []
     };
-    this.apiKey = "RGAPI-c7567da9-7048-4283-9673-600c758d8330";
+    this.apiKey = "RGAPI-b0b6290c-b962-4757-8b96-21ade785d09d";
     this.cors = "https://cors-anywhere.herokuapp.com/";
   }
 
@@ -33,7 +34,17 @@ class App extends Component {
           patchVersion: data1.version,
           profileIcons: icons
         });
-      });
+        return fetch(`http://ddragon.leagueoflegends.com/cdn/${data1.version}/data/en_US/champion.json`)
+      })
+      .then(response2 => response2.json())
+      .then(data2 => {
+        const champNames = [];
+        Object.values(data2.data).forEach(single => {
+          champNames.push({"key": parseInt(single.key), "name": single.id})
+        })
+        this.setState({champNames: champNames})
+      })
+      
   }
 
   handleChange = event => {
@@ -53,6 +64,7 @@ class App extends Component {
       `${this.cors}https://${this.state.region}.api.riotgames.com/lol/summoner/v4/summoners/by-name/${insertNickname}?api_key=${this.apiKey}`
     )
       .then(resp => {
+        console.log(resp.status);
         if (resp.status === 200) return resp.json();
         else if (resp.status === 400) {
           this.setState({ status: resp.status, serverResp: "Bad request" });
@@ -135,6 +147,7 @@ class App extends Component {
             region={this.state.region}
             icons={this.state.profileIcons}
             summData={this.state.summonerData}
+            champNames={this.state.champNames}
           />
         )}
       </React.Fragment>

@@ -10,18 +10,13 @@ class SummonerMasteryPoints extends Component {
     }
 
     componentDidMount() {
-      fetch(`http://ddragon.leagueoflegends.com/cdn/${this.props.patch}/data/en_US/champion.json`)
-        .then(resp => resp.json())
-        .then(data => {
-            let champName = "";
-            Object.values(data.data).forEach(ele => {
-                if(ele.key === String(this.props.champId)){
-                    champName = ele.id
-                }   
-            })
-            
-            this.setState({nickName: champName})
+        let champName = ""
+        this.props.champNames.forEach(single => {
+            if(single.key === this.props.champId) champName=single.name
         })
+            
+    this.setState({nickName: champName})
+        
     }
         
     

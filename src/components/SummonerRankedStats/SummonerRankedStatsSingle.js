@@ -1,11 +1,9 @@
 import React from 'react';
 import '../../sass/SummonerRankedStatsSingle.sass';
 
-
-
-
 const SummonerRankedStatsSingle = (props) => {
     const {queueType, tier, rank, points, wins, losses} = props.rank
+
     const handleQueueType = (queue) => {
         if(queue === "RANKED_SOLO_5x5") return "Ranked Solo"
         else if (queue === "RANKED_FLEX_SR") return "Ranked Flex"

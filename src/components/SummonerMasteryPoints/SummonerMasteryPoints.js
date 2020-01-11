@@ -16,19 +16,22 @@ class SummonerMasteryPoints extends Component {
         .then(resp => resp.json())
         .then(data => {
             const masteryPoints = [];
-            for(let i=0;i<4;i++){
-                masteryPoints.push({"champLevel": data[i].championLevel,
-                                    "champPoints": data[i].championPoints,
-                                    "champId": data[i].championId})
-            }
-            this.setState({summonerId: this.props.summoner.id, masteryData: masteryPoints})
-
+            if(data.length !== 0 && data.length >=4){
+                for(let i=0;i<4;i++){
+                    masteryPoints.push({"champLevel": data[i].championLevel,
+                                        "champPoints": data[i].championPoints,
+                                        "champId": data[i].championId})
+                }
+                this.setState({summonerId: this.props.summoner.id, masteryData: masteryPoints})
+            } else {
+                this.setState({summonerId: this.props.summoner.id, masteryData: []})
+            }        
         }) 
     }
 
     render(){
         if(this.props.summonerId !== "" && this.state.summonerId !== this.props.summoner.id) this.fetchMasteryData();
-        const champMastery = this.state.masteryData.map(single => <SummonerMasteryPointsSingle key={single.champId} champLevel={single.champLevel} champPoints={single.champPoints} champId={single.champId} patch={this.props.patch}/>)
+        const champMastery = this.state.masteryData.map(single => <SummonerMasteryPointsSingle key={single.champId} champLevel={single.champLevel} champPoints={single.champPoints} champId={single.champId} patch={this.props.patch} champNames={this.props.champNames}/>)
         
         return (
             <React.Fragment>

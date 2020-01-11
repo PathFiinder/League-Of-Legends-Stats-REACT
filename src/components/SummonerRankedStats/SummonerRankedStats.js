@@ -30,7 +30,7 @@ class SummonerRankedStats extends Component {
     }
 
     render(){
-        if(this.props.summonerId !== "" && this.state.summonerId !== this.props.summoner.id) this.fetchRankedStats();
+        if(this.props.summoner.id !== "" && this.state.summonerId !== this.props.summoner.id) this.fetchRankedStats();
         const singleRank =  this.state.rankedStats.map(single => <SummonerRankedStatsSingle key={single.id} rank={single}/>) 
     return (
         <React.Fragment>

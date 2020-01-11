@@ -14,13 +14,22 @@ class SummonerIcon extends Component {
             fetch(`${this.props.cors}https://${this.props.region}.api.riotgames.com/lol/league/v4/entries/by-summoner/${this.props.summoner.id}?api_key=${this.props.apiKey}`)
             .then(resp => resp.json())
             .then(data => {
-                const soloRank = [];
-                data.forEach(ele => {
-                    if(ele.queueType === "RANKED_SOLO_5x5"){
-                        soloRank.push({"tier": ele.tier, "rank": ele.rank, "points": ele.leaguePoints})
-                    }
-                })
-                this.setState({rank: soloRank, summonerId: this.props.summoner.id})
+                if(data.length !== 0){
+                    const soloRank = [];
+                    data.forEach(ele => {
+                        if(ele.queueType === "RANKED_SOLO_5x5"){
+                            soloRank.push({"tier": ele.tier, "rank": ele.rank, "points": ele.leaguePoints})
+                        } else {
+                            soloRank.push({"tier": "UNRANKED", "rank": "", "points": ""})
+                        }
+                    })
+                    this.setState({rank: soloRank, summonerId: this.props.summoner.id})
+                } else {
+                    const soloRank = [{"tier": "UNRANKED", "rank": "", "points": ""}]
+                    this.setState({rank: soloRank, summonerId: this.props.summoner.id})
+                }
+
+
             })      
         }
 
@@ -32,6 +41,7 @@ class SummonerIcon extends Component {
         if(this.state.summonerId !== "" && this.state.summonerId !== this.props.summoner.id){
             this.fetchSummonerData();
         }
+
         return ( 
             <React.Fragment>
             {this.state.rank.length !== 0 ? 
@@ -40,9 +50,10 @@ class SummonerIcon extends Component {
                     <img src={`http://ddragon.leagueoflegends.com/cdn/${this.props.patch}/img/profileicon/${this.props.summoner.profileIconId}.png`} 
                     alt="Summoner icon"
                     className="summonerIcon__iconImage"/>
+                    {this.state.rank[0].tier !== "UNRANKED" ? 
                     <img src={this.state.rank[0].tier.toLowerCase() === 'grandmaster' ? '/images/rank_borders/master.png' : `/images/rank_borders/${this.state.rank[0].tier.toLowerCase()}.png`} 
                     alt="Rank border"
-                    className="summonerIcon__borderImage"/>
+                    className="summonerIcon__borderImage"/> : ""}
                     <p className="summonerIcon__level">{this.props.summoner.summonerLevel}</p>
                 </div>
                 <div className="summonerIcon__statsContainer">
