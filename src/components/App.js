@@ -15,7 +15,7 @@ class App extends Component {
       summonerData: [],
       champNames: []
     };
-    this.apiKey = "RGAPI-b0b6290c-b962-4757-8b96-21ade785d09d";
+    this.apiKey = "RGAPI-e4b79670-3128-4a87-bce6-8718ad26953d";
     this.cors = "https://cors-anywhere.herokuapp.com/";
   }
 
@@ -34,17 +34,18 @@ class App extends Component {
           patchVersion: data1.version,
           profileIcons: icons
         });
-        return fetch(`http://ddragon.leagueoflegends.com/cdn/${data1.version}/data/en_US/champion.json`)
+        return fetch(
+          `http://ddragon.leagueoflegends.com/cdn/${data1.version}/data/en_US/champion.json`
+        );
       })
       .then(response2 => response2.json())
       .then(data2 => {
         const champNames = [];
         Object.values(data2.data).forEach(single => {
-          champNames.push({"key": parseInt(single.key), "name": single.id})
-        })
-        this.setState({champNames: champNames})
-      })
-      
+          champNames.push({ key: parseInt(single.key), name: single.id });
+        });
+        this.setState({ champNames: champNames });
+      });
   }
 
   handleChange = event => {

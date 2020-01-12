@@ -31,7 +31,7 @@ class SummonerHistoryGames extends Component {
 
     render(){
         if(this.props.summoner.id !== "" && this.state.summonerId !== this.props.summoner.id) this.fetchHistoryGamesData();
-        const singleGame = this.state.gameHistory.map((single,index) => <SummonerHistoryGamesSingle key={single.gameId} matchId={single.gameId} champion={single.champion} queue={single.queue} timestamp={single.timestamp} patch={this.props.patch} cors={this.props.cors} region={this.props.region} apiKey={this.props.apiKey} champNames={this.props.champNames} index={index}/>)
+        const singleGame = this.state.gameHistory.map((single,index) => <SummonerHistoryGamesSingle key={single.gameId} matchId={single.gameId} champion={single.champion}  patch={this.props.patch} cors={this.props.cors} region={this.props.region} apiKey={this.props.apiKey} champNames={this.props.champNames} nick={this.props.summoner.name} icon={this.props.summoner.profileIconId}/>)
         return(
             <React.Fragment>
                 {this.state.gameHistory.length !== 0 ? 
