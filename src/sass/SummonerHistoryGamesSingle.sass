@@ -4,12 +4,20 @@
     margin: 5px
     padding-bottom: 5px
     border-bottom: 1px solid grey
-    display: flex
-    flex-diretion: row
     &--last
         border-bottom: none
-    .historyGameSingle__item
-        flex-basis: 30%
-        overflow: hidden
-        &--bans
-            flex-basis: 20% 
+    .historyGameSingle__queueType 
+        text-align: center
+        font-weight: bold
+        padding-bottom: 2px
+    .historyGameSingle__container 
+        display: flex
+        flex-diretion: row
+        height: calc(100% - 20px)
+        .historyGameSingle__item
+            flex-basis: 30%
+            overflow: hidden
+            &--bans
+                flex-basis: 20% 
+        .historyGameSingle__item--aram
+            flex-basis: 50%

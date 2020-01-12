@@ -36,10 +36,6 @@ class SummonerHistoryGames extends Component {
             <React.Fragment>
                 {this.state.gameHistory.length !== 0 ? 
                 <div className="summonerData__item summonerHistoryGames">
-                    <div className="summonerHistoryGames__container">
-                        <button className="summonerHistoryGames__button summonerHistoryGames__button--overall summonerHistoryGames__button--active">Overall</button>
-                        <button className="summonerHistoryGames__button summonerHistoryGames__button--tft">TFT</button>
-                    </div>
                     {singleGame}
                 </div>
                 : ""}
