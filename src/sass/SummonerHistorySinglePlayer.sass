@@ -1,0 +1,41 @@
+.historyGameSingle__playerInfo, .playerInfo
+        position: relative
+        height: calc(100% - 28px)
+        .playerInfo__champImg
+            position: absolute
+            top: 50%
+            left: 25px
+            transform: translateY(-60%)
+            height: 50px
+            width: 50px
+            border-radius: 50%
+        .playerInfo__summonerLane
+            position: absolute
+            bottom: 5px
+            left: 10px
+            height: 25px
+            width: 80px
+            border-radius: 15px
+            background-color: #321F44
+            text-align: center
+            .playerInfo__laneImg
+                height: 15px
+                width: 15px
+            .playerInfo__lane
+                font-size: 10px
+                margin-top: 7.5px
+                margin-left: 2px
+                display: inline-block
+        .playerInfo__spells
+            position: absolute
+            top: 50%
+            left: 90px
+            height: 50px
+            transform: translateY(-60%)
+            overflow: hidden
+            display: flex
+            flex-direction: column
+            flex-wrap: wrap
+            .playerInfo__singleSpell
+                flex-basis: 50%
+                height: 50%
