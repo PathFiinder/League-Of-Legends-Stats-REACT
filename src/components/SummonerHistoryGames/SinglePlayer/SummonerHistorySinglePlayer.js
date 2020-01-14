@@ -1,7 +1,9 @@
 import React from 'react';
 import '../../../sass/SummonerHistorySinglePlayer.sass'
+import SummonerHistoryItemsList from '../Items/SummonerHistoryItemsList.js'
 
 const SummonerHistorySinglePlayer = (props) => {
+   
 
     const getChampionName = () => {
         let champName = ""
@@ -36,6 +38,10 @@ const SummonerHistorySinglePlayer = (props) => {
             <div className="playerInfo__spells">
                 <img className="playerInfo__singleSpell" src={`./images/spells/${props.playerStats[0].spell1Id}.png`} alt="Spell img"/>
                 <img className="playerInfo__singleSpell" src={`./images/spells/${props.playerStats[0].spell2Id}.png`} alt="Spell img"/>
+            </div>
+            <p className="playerInfo__stats">{`${props.playerStats[0].stats.kills} / ${props.playerStats[0].stats.deaths} / ${props.playerStats[0].stats.assists}`}</p>
+            <div className="playerInfo__itemList">
+                {<SummonerHistoryItemsList patch={props.patch} itemList={props.playerStats[0].stats}/>}
             </div>
         </div>
       );

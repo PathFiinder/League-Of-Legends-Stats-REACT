@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 
 import '../../sass/SummonerHistoryGamesSingle.sass' 
 import SummonerHistorySinglePlayer from './SinglePlayer/SummonerHistorySinglePlayer';
-
+import SummonerHistoryGamesTeams from './Teams/SummonerHistoryGamesTeams'
 class SummonerHistoryGamesSingle extends Component{
     constructor(props){
         super(props);
@@ -11,7 +11,8 @@ class SummonerHistoryGamesSingle extends Component{
             matchId: "",
             gameData: [],
             teamOneData: [],
-            teamTwoData: []
+            teamTwoData: [],
+            active: false
         }
     }
 
@@ -134,16 +135,35 @@ class SummonerHistoryGamesSingle extends Component{
         return {win,playerStats,teamOneStats,teamTwoStats}
     }
 
+    handleClick= () => {
+        const currentState = this.state.active;
+        this.setState({ active: !currentState });
+    }
     
     render(){
         if(this.props.matchId !== "" && this.state.matchId !== this.props.matchId) this.fetchGameData();
         const {win,playerStats,teamOneStats,teamTwoStats} = this.getMainSummonerData()
         return (  
             <React.Fragment>
-                {this.state.gameData.length !== 0 ? 
+                {this.state.gameData.length !== 0 && playerStats.length !== 0? 
                     <div className={`summonerHistoryGames__single historyGameSingle ${win === "Win" ? "historyGameSingle--win" : "historyGameSingle--fail"}`}>
                         <h3 className="historyGameSingle__queue">{`${this.getQueueName(this.state.gameData[4].value)} `}&#8901;<span className="historyGameSingle__queue--duration">{` ${this.getGameDuration(this.state.gameData[3].value)}`}</span></h3>
                         {<SummonerHistorySinglePlayer patch={this.props.patch} champNames={this.props.champNames} champion={this.props.champion} playerStats={playerStats}/>}
+                        <button className={`far ${this.state.active === false ? "fa-arrow-alt-circle-down" : "fa-arrow-alt-circle-up"} historyGameSingle__button`} onClick={this.handleClick}></button>
+                        {this.state.active !== false ? 
+                        <div className="historyGameSingle__container teams">
+                            <div className={`teams__singleItem ${this.state.gameData[10].value[0].win === "Win" ? "teams__singleItem--win" : "teams__singleItem--lose"}`}>
+                                <div className="teams__teamInfo">
+                                    <SummonerHistoryGamesTeams teamData={this.state.gameData[10].value[0]}/>
+                                </div>
+                            </div>
+                            <div className={`teams__singleItem ${this.state.gameData[10].value[1].win === "Win" ? "teams__singleItem--win" : "teams__singleItem--lose"}`}>
+                                <div className="teams__teamInfo">
+                                    <SummonerHistoryGamesTeams teamData={this.state.gameData[10].value[1]}/>
+                                </div>
+                            </div>
+                        </div>
+                        : ""}
                     </div>
                 : ""}
             </React.Fragment>

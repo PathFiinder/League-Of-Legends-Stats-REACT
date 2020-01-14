@@ -1,10 +1,11 @@
 .summonerHistoryGames__single, .historyGameSingle
-    height: 150px
+    min-height: 150px
     width: calc(100% - 10px - 2px)
     margin: 5px
     padding-bottom: 5px 
     border-radius: 4px
     border: 0.1px solid white
+    position: relative
     .historyGameSingle__queue
         font-weight: bold
         text-transform: uppercase
@@ -23,7 +24,63 @@
         &--duration
             text-transform: none
             color: #7A84A7
-    
+    .historyGameSingle__playerInfo 
+        height: 112px
+    .historyGameSingle__button
+            position: absolute
+            right: 0
+            top: 122px
+            border: none
+            background-color: transparent
+            color: white
+            height: 20px
+            font-size: 18px
+    .historyGameSingle__container, .teams
+        height: 450px
+        width: 100%
+        position: relative
+        //background-color: red
+        margin-top: 8px
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        padding-top: 4px
+        &:before 
+            content: ""
+            position: absolute
+            top: 0
+            left: 50%
+            transform: translateX(-50%)
+            height: 2px
+            width: 100%
+            background-color: rgba(255,255,255,0.3)
+        .teams__singleItem
+            flex-basis: 48%
+            margin: 1% auto
+            width: 96%
+            //background-color: blue
+            border: 1px solid white
+            padding: 2px
+            &--win
+                background: linear-gradient(90deg, rgba(97, 152, 164, 0.5) 0%, rgba(49, 41, 85, 0.5) 100%)
+            &--lose
+                background: linear-gradient(90deg, rgba(201, 103, 143, 0.5) 0%, rgba(49, 41, 85, 0.5) 100%)
+            .teams__teamInfo
+                height: 40px
+                width: 100%
+                position: relative
+                &:after
+                    content: ""
+                    position: absolute
+                    bottom: 0
+                    left: 50%
+                    transform: translateX(-50%)
+                    height: 2px
+                    width: 95%
+                    background-color: rgba(255,255,255,0.1)
+
+
+
 .historyGameSingle--win
     background: linear-gradient(90deg, rgba(97, 152, 164, 0.5) 0%, rgba(49, 41, 85, 0.5) 100%)
 .historyGameSingle--fail
