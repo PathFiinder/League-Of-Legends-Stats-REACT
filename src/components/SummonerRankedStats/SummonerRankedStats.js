@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../sass/SummonerRankedStats.sass'
 import SummonerRankedStatsSingle from './SummonerRankedStatsSingle.js'
-
+import SummonerRankedStatsTTF from './SummonerRankedStatsTTF.js'
 class SummonerRankedStats extends Component {
     constructor(props) {
         super(props);
@@ -37,6 +37,7 @@ class SummonerRankedStats extends Component {
             {this.state.rankedStats.length !== 0 ? 
                 <div className="summonerData__item summonerRankedStats">
                 {singleRank}
+                {<SummonerRankedStatsTTF summonerId={this.state.summonerId} cors={this.props.cors} region={this.props.region} apiKey={this.props.apiKey}/>}
             </div>
             : ""
             }

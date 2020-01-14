@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 
-
 import '../../sass/SummonerHistoryGamesSingle.sass' 
 import SummonerHistorySinglePlayer from './SinglePlayer/SummonerHistorySinglePlayer';
 import SummonerHistoryGamesTeams from './Teams/SummonerHistoryGamesTeams'
+import SummonerHistorySingleTeam from './SingleTeam/SummonerHistorySingleTeam'
+
+
 class SummonerHistoryGamesSingle extends Component{
     constructor(props){
         super(props);
@@ -148,7 +150,7 @@ class SummonerHistoryGamesSingle extends Component{
                 {this.state.gameData.length !== 0 && playerStats.length !== 0? 
                     <div className={`summonerHistoryGames__single historyGameSingle ${win === "Win" ? "historyGameSingle--win" : "historyGameSingle--fail"}`}>
                         <h3 className="historyGameSingle__queue">{`${this.getQueueName(this.state.gameData[4].value)} `}&#8901;<span className="historyGameSingle__queue--duration">{` ${this.getGameDuration(this.state.gameData[3].value)}`}</span></h3>
-                        {<SummonerHistorySinglePlayer patch={this.props.patch} champNames={this.props.champNames} champion={this.props.champion} playerStats={playerStats}/>}
+                        {<SummonerHistorySinglePlayer patch={this.props.patch} champNames={this.props.champNames} champion={this.props.champion} playerStats={playerStats} queue={this.state.gameData[4].value}/>}
                         <button className={`far ${this.state.active === false ? "fa-arrow-alt-circle-down" : "fa-arrow-alt-circle-up"} historyGameSingle__button`} onClick={this.handleClick}></button>
                         {this.state.active !== false ? 
                         <div className="historyGameSingle__container teams">
@@ -156,10 +158,16 @@ class SummonerHistoryGamesSingle extends Component{
                                 <div className="teams__teamInfo">
                                     <SummonerHistoryGamesTeams teamData={this.state.gameData[10].value[0]}/>
                                 </div>
+                                <div className="teams__teamData teamData">
+                                    <SummonerHistorySingleTeam patch={this.props.patch} teamData={this.state.teamOneData} champNames={this.props.champNames}/>
+                                </div>
                             </div>
                             <div className={`teams__singleItem ${this.state.gameData[10].value[1].win === "Win" ? "teams__singleItem--win" : "teams__singleItem--lose"}`}>
                                 <div className="teams__teamInfo">
                                     <SummonerHistoryGamesTeams teamData={this.state.gameData[10].value[1]}/>
+                                </div>
+                                <div className="teams__teamData teamData">
+                                    <SummonerHistorySingleTeam patch={this.props.patch} teamData={this.state.teamTwoData} champNames={this.props.champNames}/>
                                 </div>
                             </div>
                         </div>

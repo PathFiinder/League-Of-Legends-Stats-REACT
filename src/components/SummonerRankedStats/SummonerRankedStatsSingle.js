@@ -7,7 +7,6 @@ const SummonerRankedStatsSingle = (props) => {
     const handleQueueType = (queue) => {
         if(queue === "RANKED_SOLO_5x5") return "Ranked Solo"
         else if (queue === "RANKED_FLEX_SR") return "Ranked Flex"
-        else if (queue === "RANKED__TTF") return "Ranked TTF"
     }
 
 

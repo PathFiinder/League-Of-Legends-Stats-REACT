@@ -36,10 +36,9 @@
             height: 20px
             font-size: 18px
     .historyGameSingle__container, .teams
-        height: 450px
+        height: 650px
         width: 100%
         position: relative
-        //background-color: red
         margin-top: 8px
         display: flex
         flex-direction: column
@@ -58,7 +57,6 @@
             flex-basis: 48%
             margin: 1% auto
             width: 96%
-            //background-color: blue
             border: 1px solid white
             padding: 2px
             &--win
@@ -78,6 +76,12 @@
                     height: 2px
                     width: 95%
                     background-color: rgba(255,255,255,0.1)
+            .teams__teamData, .teamData
+                height: calc(100% - 40px)
+                width: calc(100% - 10px)
+                margin: 0 5px
+                display: flex
+                flex-direction: column
 
 
 

@@ -31,10 +31,12 @@ const SummonerHistorySinglePlayer = (props) => {
     return (
         <div className="historyGameSingle__playerInfo playerInfo">
             <img src={`http://ddragon.leagueoflegends.com/cdn/${props.patch}/img/champion/${getChampionName()}.png`} alt="Champion img" className="playerInfo__champImg"/>
+            {props.queue !== 450 ? 
             <div className="playerInfo__summonerLane">
                 <img src={`/images/lane/${getSummonerLane()}.png`} alt="Lane img" className="playerInfo__laneImg"/>
                 <h3 className="playerInfo__lane">{getSummonerLane()}</h3>
             </div>
+            : " "}
             <div className="playerInfo__spells">
                 <img className="playerInfo__singleSpell" src={`./images/spells/${props.playerStats[0].spell1Id}.png`} alt="Spell img"/>
                 <img className="playerInfo__singleSpell" src={`./images/spells/${props.playerStats[0].spell2Id}.png`} alt="Spell img"/>
