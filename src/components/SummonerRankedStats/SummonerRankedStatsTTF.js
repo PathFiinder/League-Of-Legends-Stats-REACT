@@ -14,8 +14,10 @@ class SummonerRankedStatsTTF extends Component{
         fetch(`${this.props.cors}https://${this.props.region}.api.riotgames.com/tft/league/v1/entries/by-summoner/${this.props.summonerId}?api_key=${this.props.apiKey}`)
         .then(resp => resp.json())
         .then(data => {
-            ttfData.push({"tier": data[0].tier,"rank": data[0].rank, "points": data[0].leaguePoints,"wins": data[0].wins})
-            this.setState({summonerId: this.props.summonerId, ttfData: ttfData})
+            if(data.length !== 0){
+                ttfData.push({"tier": data[0].tier,"rank": data[0].rank, "points": data[0].leaguePoints,"wins": data[0].wins})
+                this.setState({summonerId: this.props.summonerId, ttfData: ttfData})
+            }
         })
     }
 

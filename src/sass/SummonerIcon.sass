@@ -3,12 +3,25 @@
     width: 98%
     margin: 0 auto
     position: relative
+    max-width: 1280px
+    
+    @media (min-width: 568px)
+            height: 150px
+            width: 450px
+    @media (min-width: 768px)
+            width: 600px
     &__iconContainer
         height: 80px
         width: 80px
         position: absolute
         top: 12px
         left: 12px
+        @media (min-width: 568px)
+                left: 50px
+                height: 100px
+                width: 100px
+        @media (min-width: 768px)
+                left:  80px
         .summonerIcon__iconImage
             width: 75px
             height: 75px
@@ -16,6 +29,9 @@
             top: 50%
             left: 50%
             transform: translate(-50%,-50%)
+            @media (min-width: 568px)
+                height: 95px
+                width: 95px
         .summonerIcon__borderImage
             position: absolute
             max-width: 110%
@@ -37,6 +53,10 @@
             font-size: 14px
             border: 1px solid white
             box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75)
+            @media (min-width: 568px)
+                width: 50px
+                font-size: 18px
+                bottom: - 22px
     &__statsContainer
         height: 70px
         min-width: 170px
@@ -45,14 +65,35 @@
         left: 120px
         transform: translateY(-50%)
         text-align: center
+        @media (min-width: 375px)
+                left: 150px
+        @media (min-width: 568px)
+                left: 220px
+                height: auto
+        @media (min-width: 768px)
+                left:  280px
         .summonerIcon__nickname
             font-size: 24px
             font-weight: bold
             margin-bottom: 10px
+            @media (min-width: 360px)
+                font-size: 28px
+            @media (min-width: 568px)
+                font-size: 35px
         .summonerIcon__rankImage
             height: 20px
             width: 20px 
+            @media (min-width: 360px)
+                height: 35px
+                width: 35px
+            @media (min-width: 568px)
+                height: 50px
+                width: 50px
         .summonerIcon__stats
             display: inline-block
             margin-left: 5px
-            color: grey
+            color: white
+            @media (min-width: 360px)
+                font-size: 18px
+            @media (min-width: 568px)
+                font-size: 22px

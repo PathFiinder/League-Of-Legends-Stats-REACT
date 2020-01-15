@@ -37,7 +37,8 @@ class SummonerRankedStats extends Component {
             {this.state.rankedStats.length !== 0 ? 
                 <div className="summonerData__item summonerRankedStats">
                 {singleRank}
-                {<SummonerRankedStatsTTF summonerId={this.state.summonerId} cors={this.props.cors} region={this.props.region} apiKey={this.props.apiKey}/>}
+                {<SummonerRankedStatsTTF summonerId={this.state.summonerId} cors={this.props.cors} region={this.props.region} apiKey={this.props.apiKey}/>
+                }
             </div>
             : ""
             }
