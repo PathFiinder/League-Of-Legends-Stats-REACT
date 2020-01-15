@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/League-Of-Legends-Stats-REACT/static/css/main.a1166b91.chunk.css",
+    "main.js": "/League-Of-Legends-Stats-REACT/static/js/main.ceb09687.chunk.js",
+    "main.js.map": "/League-Of-Legends-Stats-REACT/static/js/main.ceb09687.chunk.js.map",
+    "runtime-main.js": "/League-Of-Legends-Stats-REACT/static/js/runtime-main.ee3092a0.js",
+    "runtime-main.js.map": "/League-Of-Legends-Stats-REACT/static/js/runtime-main.ee3092a0.js.map",
+    "static/js/2.9fa20a6c.chunk.js": "/League-Of-Legends-Stats-REACT/static/js/2.9fa20a6c.chunk.js",
+    "static/js/2.9fa20a6c.chunk.js.map": "/League-Of-Legends-Stats-REACT/static/js/2.9fa20a6c.chunk.js.map",
+    "index.html": "/League-Of-Legends-Stats-REACT/index.html",
+    "precache-manifest.8693419d96c9ac45441c4fc6a38d8a90.js": "/League-Of-Legends-Stats-REACT/precache-manifest.8693419d96c9ac45441c4fc6a38d8a90.js",
+    "service-worker.js": "/League-Of-Legends-Stats-REACT/service-worker.js",
+    "static/css/main.a1166b91.chunk.css.map": "/League-Of-Legends-Stats-REACT/static/css/main.a1166b91.chunk.css.map",
+    "static/js/2.9fa20a6c.chunk.js.LICENSE": "/League-Of-Legends-Stats-REACT/static/js/2.9fa20a6c.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ee3092a0.js",
+    "static/js/2.9fa20a6c.chunk.js",
+    "static/css/main.a1166b91.chunk.css",
+    "static/js/main.ceb09687.chunk.js"
+  ]
+}
