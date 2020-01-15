@@ -6,8 +6,8 @@ Tech Work used:
 - CSS3 (SASS)
 - RWD (Mobile First)
 - React (Create React App)
-RioT API (https://developer.riotgames.com/)
-RioT API Libraries - Data Dragon (https://riot-api-libraries.readthedocs.io/en/latest/ddragon.html)
+- RioT API (https://developer.riotgames.com/)
+- RioT API Libraries - Data Dragon (https://riot-api-libraries.readthedocs.io/en/latest/ddragon.html)
 
 Live: https://pathfiinder.github.io/League-Of-Legends-Stats-REACT/
 
