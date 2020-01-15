@@ -30,10 +30,10 @@ const SummonerHistorySinglePlayer = (props) => {
     const lane = getSummonerLane()
     return (
         <div className="historyGameSingle__playerInfo playerInfo">
-            <img src={`http://ddragon.leagueoflegends.com/cdn/${props.patch}/img/champion/${getChampionName()}.png`} alt="Champion img" className="playerInfo__champImg"/>
+            <img src={`https://ddragon.leagueoflegends.com/cdn/${props.patch}/img/champion/${getChampionName()}.png`} alt="Champion img" className="playerInfo__champImg"/>
             {props.queue !== 450 ? 
             <div className="playerInfo__summonerLane">
-                <img src={lane === "NONE" ? `/images/lane/TOP.png` : `/images/lane/${lane}.png`} alt="Lane img" className="playerInfo__laneImg"/>
+                <img src={lane === "NONE" ? `./images/lane/TOP.png` : `./images/lane/${lane}.png`} alt="Lane img" className="playerInfo__laneImg"/>
                 <h3 className="playerInfo__lane">{lane === "NONE" ? "TOP" : lane}</h3>
             </div>
             : " "}

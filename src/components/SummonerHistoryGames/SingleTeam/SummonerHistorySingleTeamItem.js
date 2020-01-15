@@ -15,7 +15,7 @@ const SummonerHistorySingleTeamItem = (props) => {
 
     return (  
         <div className="teamData__singleItem">
-            <img src={`http://ddragon.leagueoflegends.com/cdn/${props.patch}/img/champion/${champName()}.png`} alt="Champion img" className="teamData__champImg"/> 
+            <img src={`https://ddragon.leagueoflegends.com/cdn/${props.patch}/img/champion/${champName()}.png`} alt="Champion img" className="teamData__champImg"/> 
             <p className="teamData__champLvl">{props.playerData.stats.champLevel}</p>
             <div className="teamData__spells">
                 <img className="teamData__singleSpell" src={`./images/spells/${props.playerData.spell1Id}.png`} alt="Spell img"/>

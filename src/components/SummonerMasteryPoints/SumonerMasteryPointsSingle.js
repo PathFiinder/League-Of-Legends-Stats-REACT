@@ -26,8 +26,8 @@ class SummonerMasteryPoints extends Component {
             <React.Fragment>
                { this.state.nickName !== "" ?
                 <div className="summonerMasteryPoints__single">
-                    <img src={`http://ddragon.leagueoflegends.com/cdn/${this.props.patch}/img/champion/${this.state.nickName}.png`} alt="Mastery level img" className="summonerMasteryPoints__image"/>
-                    <img src={`/images/mastery/lvl${this.props.champLevel}.png`} alt="Mastery lvl img" className="summonerMasteryPoints__masteryLvl"/>
+                    <img src={`https://ddragon.leagueoflegends.com/cdn/${this.props.patch}/img/champion/${this.state.nickName}.png`} alt="Mastery level img" className="summonerMasteryPoints__image"/>
+                    <img src={`./images/mastery/lvl${this.props.champLevel}.png`} alt="Mastery lvl img" className="summonerMasteryPoints__masteryLvl"/>
                     <p className="summonerMasteryPoints__champScore"><span className="summonerMasteryPoints__champScore--bold">{this.props.champPoints.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')}</span> pts</p>
                 </div>
                 : ""}

@@ -3,7 +3,7 @@ import '../../../sass/SummonerHistoryItemsSingle.sass'
 
 const SummonerHistoryItemsSingle = (props) => {
     return (  
-        <img src={`http://ddragon.leagueoflegends.com/cdn/${props.patch}/img/item/${props.id}.png`} alt="Item img" className="itemsList__singleItem"/>
+        <img src={`https://ddragon.leagueoflegends.com/cdn/${props.patch}/img/item/${props.id}.png`} alt="Item img" className="itemsList__singleItem"/>
     );
 }
  

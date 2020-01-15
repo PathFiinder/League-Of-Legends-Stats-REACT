@@ -90,6 +90,7 @@ class SummonerHistoryGamesSingle extends Component{
         else if(queueId === 430) return "Blind Pick"; 
         else if(queueId === 440) return "Ranked Flex"; 
         else if(queueId === 450) return "ARAM"; 
+        else return "Other"
       
     }    
 

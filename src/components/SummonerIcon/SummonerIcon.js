@@ -47,18 +47,18 @@ class SummonerIcon extends Component {
             {this.state.rank.length !== 0 ? 
             <div className="summonerData__item summonerIcon">
                 <div className="summonerIcon__iconContainer">
-                    <img src={`http://ddragon.leagueoflegends.com/cdn/${this.props.patch}/img/profileicon/${this.props.summoner.profileIconId}.png`} 
+                    <img src={`https://ddragon.leagueoflegends.com/cdn/${this.props.patch}/img/profileicon/${this.props.summoner.profileIconId}.png`} 
                     alt="Summoner icon"
                     className="summonerIcon__iconImage"/>
                     {this.state.rank[0].tier !== "UNRANKED" ? 
-                    <img src={this.state.rank[0].tier.toLowerCase() === 'grandmaster' ? '/images/rank_borders/master.png' : `/images/rank_borders/${this.state.rank[0].tier.toLowerCase()}.png`} 
+                    <img src={this.state.rank[0].tier.toLowerCase() === 'grandmaster' ? './images/rank_borders/master.png' : `./images/rank_borders/${this.state.rank[0].tier.toLowerCase()}.png`} 
                     alt="Rank border"
                     className="summonerIcon__borderImage"/> : ""}
                     <p className="summonerIcon__level">{this.props.summoner.summonerLevel}</p>
                 </div>
                 <div className="summonerIcon__statsContainer">
                     <h3 className="summonerIcon__nickname">{this.props.summoner.name}</h3>
-                    <img src={`/images/emblems/Emblem_${this.state.rank[0].tier}.png`} alt="Summoner rank" className="summonerIcon__rankImage"/>
+                    <img src={`./images/emblems/Emblem_${this.state.rank[0].tier}.png`} alt="Summoner rank" className="summonerIcon__rankImage"/>
                     <p className="summonerIcon__stats">
                         <span className="summonerLevel__stats--bold">{this.state.rank[0].tier.toLowerCase().charAt(0).toUpperCase() + this.state.rank[0].tier.toLowerCase().slice(1) + "  "}</span> 
                         <span className="summonerLevel__stats--bold">{this.state.rank[0].rank + " | "}</span>

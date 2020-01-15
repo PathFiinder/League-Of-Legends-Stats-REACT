@@ -20,11 +20,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://ddragon.leagueoflegends.com/api/versions.json`)
+    fetch(`https://ddragon.leagueoflegends.com/api/versions.json`)
       .then(response => response.json())
       .then(data =>
         fetch(
-          `http://ddragon.leagueoflegends.com/cdn/${data[0]}/data/en_US/profileicon.json`
+          `https://ddragon.leagueoflegends.com/cdn/${data[0]}/data/en_US/profileicon.json`
         )
       )
       .then(response1 => response1.json())
@@ -35,7 +35,7 @@ class App extends Component {
           profileIcons: icons
         });
         return fetch(
-          `http://ddragon.leagueoflegends.com/cdn/${data1.version}/data/en_US/champion.json`
+          `https://ddragon.leagueoflegends.com/cdn/${data1.version}/data/en_US/champion.json`
         );
       })
       .then(response2 => response2.json())
@@ -65,7 +65,6 @@ class App extends Component {
       `${this.cors}https://${this.state.region}.api.riotgames.com/lol/summoner/v4/summoners/by-name/${insertNickname}?api_key=${this.apiKey}`
     )
       .then(resp => {
-        console.log(resp.status);
         if (resp.status === 200) return resp.json();
         else if (resp.status === 400) {
           this.setState({ status: resp.status, serverResp: "Bad request" });
