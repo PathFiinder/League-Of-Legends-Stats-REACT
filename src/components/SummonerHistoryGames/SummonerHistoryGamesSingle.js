@@ -144,7 +144,7 @@ class SummonerHistoryGamesSingle extends Component{
     
     render(){
         if(this.props.matchId !== "" && this.state.matchId !== this.props.matchId) this.fetchGameData();
-        const {win,playerStats,teamOneStats,teamTwoStats} = this.getMainSummonerData()
+        const {win,playerStats} = this.getMainSummonerData()
         return (  
             <React.Fragment>
                 {this.state.gameData.length !== 0 && playerStats.length !== 0? 

@@ -23,6 +23,9 @@ const SummonerHistorySingleTeamItem = (props) => {
             </div>
             <h3 className="teamData__playerNick">{props.playerData.nick}</h3>
             <p className="teamData__playerStats">{`${props.playerData.stats.kills} / ${props.playerData.stats.deaths} / ${props.playerData.stats.assists}`}</p>
+            <p className="teamData__goldCS"><span className="teamData__goldCS--bold">{props.playerData.stats.goldEarned}</span>{` gold / `}<span className="teamData__goldCS--bold">{props.playerData.stats.totalMinionsKilled}</span>{` CS`}</p>
+            <p className="teamData__dmgDealt">Damage <br/><span className="teamData__dmgDealt--bold">{props.playerData.stats.totalDamageDealtToChampions}</span></p>
+            <p className="teamData__wards">Wards placed: <span className="teamData__wards--bold">{props.playerData.stats.wardsPlaced}</span></p>
             <div className="teamData__itemList">
                 <SummonerHistoryItemsList patch={props.patch} itemList={props.playerData.stats}/>
             </div>

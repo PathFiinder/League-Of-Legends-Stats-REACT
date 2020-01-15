@@ -9,7 +9,7 @@ const SummonerHistoryItemsList = (props) => {
         return itemList;
     }
 
-    const singleItem = getItems().map((ele,index) => {if(ele !== 0 ) return <SummonerHistoryItemsSingle key={index} patch={props.patch} id={ele}/>})
+    const singleItem = getItems().filter(single => single !== 0).map((ele,index) => <SummonerHistoryItemsSingle key={index} patch={props.patch} id={ele}/>)
     return (  
  
         <div className="itemsList">

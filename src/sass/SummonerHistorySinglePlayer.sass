@@ -40,11 +40,59 @@
             .playerInfo__singleSpell
                 flex-basis: 50%
                 height: 50%
+        .playerInfo__perks
+            display: none
+            position: absolute
+            top: 50%
+            left: 120px
+            height: 50px
+            transform: translateY(-60%)
+            overflow: hidden
+            flex-direction: column
+            flex-wrap: wrap
+            @media (min-width: 568px)
+                display: flex
+            .playerInfo__singlePerk
+                flex-basis: 50%
+                height: 50%
         .playerInfo__stats
             position: absolute
             top: 28%
             left: 130px
             font-weight: bold
+            @media (min-width: 568px)
+                left: 180px
+        .playerInfo__goldCS
+            position: absolute
+            bottom: 40px
+            left: 155px
+            display: none
+            @media (min-width: 568px)
+                display: block
+            &--bold
+                font-weight: bold
+        .playerInfo__dmgDealt
+            position: absolute
+            top: 50%
+            left: 300px
+            transform: translateY(-50%)
+            display: none
+            text-align: center
+            @media (min-width: 1024px)
+                display: block
+            &--bold
+                font-weight: bold
+        .playerInfo__wards
+            position: absolute
+            top: 50%
+            left: 380px
+            transform: translateY(-50%)
+            display: none
+            text-align: center
+            @media (min-width: 1024px)
+                display: block
+            &--bold
+                font-weight: bold
         .playerInfo__itemList
             position: absolute
             top: 55%
@@ -53,6 +101,20 @@
             height: 30px
             width: 150px
             overflow: hidden
-        
+            @media (min-width: 360px)
+                width: 180px
+            @media (min-width: 568px)
+                left: 290px
+                top: 50%
+                transform: translateY(-50%)
+            @media (min-width: 640px)
+                left: 320px
+            @media (min-width: 812px)
+                left: 350px
+            @media (min-width: 1024px)
+                left: 420px
+            @media (min-width: 1280px)
+                left: 520px
+                width: 240px
         
             

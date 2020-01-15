@@ -6,7 +6,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nickname: "TheWanh3da", //""
+      nickname: "",
       region: "eun1",
       status: 404,
       serverResp: "",

@@ -27,22 +27,29 @@ const SummonerHistorySinglePlayer = (props) => {
         }
     }
 
-
+    const lane = getSummonerLane()
     return (
         <div className="historyGameSingle__playerInfo playerInfo">
             <img src={`http://ddragon.leagueoflegends.com/cdn/${props.patch}/img/champion/${getChampionName()}.png`} alt="Champion img" className="playerInfo__champImg"/>
             {props.queue !== 450 ? 
             <div className="playerInfo__summonerLane">
-                <img src={`/images/lane/${getSummonerLane()}.png`} alt="Lane img" className="playerInfo__laneImg"/>
-                <h3 className="playerInfo__lane">{getSummonerLane()}</h3>
+                <img src={lane === "NONE" ? `/images/lane/TOP.png` : `/images/lane/${lane}.png`} alt="Lane img" className="playerInfo__laneImg"/>
+                <h3 className="playerInfo__lane">{lane === "NONE" ? "TOP" : lane}</h3>
             </div>
             : " "}
             <div className="playerInfo__spells">
                 <img className="playerInfo__singleSpell" src={`./images/spells/${props.playerStats[0].spell1Id}.png`} alt="Spell img"/>
                 <img className="playerInfo__singleSpell" src={`./images/spells/${props.playerStats[0].spell2Id}.png`} alt="Spell img"/>
             </div>
+            <div className="playerInfo__perks">
+                <img src={`https://opgg-static.akamaized.net/images/lol/perk/${props.playerStats[0].stats.perk0}.png`} alt="singlePerk" className="playerInfo__singlePerk"/>
+                <img src={`https://opgg-static.akamaized.net/images/lol/perkStyle/${props.playerStats[0].stats.perkSubStyle}.png`} alt="singlePerk" className="playerInfo__singlePerk"/>
+            </div>
             <p className="playerInfo__stats">{`${props.playerStats[0].stats.kills} / ${props.playerStats[0].stats.deaths} / ${props.playerStats[0].stats.assists}`}</p>
-            <div className="playerInfo__itemList">
+            <p className="playerInfo__goldCS"><span className="playerInfo__goldCS--bold">{props.playerStats[0].stats.goldEarned}</span>{` gold / `}<span className="playerInfo__goldCS--bold">{props.playerStats[0].stats.totalMinionsKilled}</span>{` CS`}</p>
+            <p className="playerInfo__dmgDealt">Damage <br/><span className="playerInfo__dmgDealt--bold">{props.playerStats[0].stats.totalDamageDealtToChampions}</span></p>
+            <p className="playerInfo__wards">Wards placed: <span className="playerInfo__wards--bold">{props.playerStats[0].stats.wardsPlaced}</span></p>
+            <div className="playerInfo__itemList"> 
                 {<SummonerHistoryItemsList patch={props.patch} itemList={props.playerStats[0].stats}/>}
             </div>
         </div>
