@@ -15,7 +15,7 @@ class App extends Component {
       summonerData: [],
       champNames: []
     };
-    this.apiKey = "RGAPI-04d87ea6-139d-4738-bbf2-43b5abe44d27";
+    this.apiKey = "RGAPI-10050953-1912-4af1-9e61-56053f3f7b56";
     this.cors = "https://cors-anywhere.herokuapp.com/";
   }
 
@@ -103,26 +103,27 @@ class App extends Component {
         <div className="main">
           <h1 className="main__title">League of Legends Stats</h1>
           <h2 className="main__description">
-            Choose server (region) and insert summoner nickname <br /> (example: EUNE, TheWanh3da)
+            Choose server (region) and insert summoner nickname <br /> (example:
+            EUNE, TheWanh3da)
           </h2>
           <div className="main__container">
-              <select
-                className="main__select"
-                value={this.state.region}
-                onChange={this.handleChangeSelect}
-              >
-                <option value="eun1" defaultValue>
-                  Europe Nordic & East
-                </option>
-                <option value="euw1">Europe West</option>
-                <option value="kr">Korea</option>
-                <option value="jp1">Japan</option>
-                <option value="na1">North America</option>
-                <option value="oc1">Oceania</option>
-                <option value="br1">Brazil</option>
-                <option value="ru">Russia</option>
-                <option value="tr1">Turkey</option>
-              </select>
+            <select
+              className="main__select"
+              value={this.state.region}
+              onChange={this.handleChangeSelect}
+            >
+              <option value="eun1" defaultValue>
+                Europe Nordic & East
+              </option>
+              <option value="euw1">Europe West</option>
+              <option value="kr">Korea</option>
+              <option value="jp1">Japan</option>
+              <option value="na1">North America</option>
+              <option value="oc1">Oceania</option>
+              <option value="br1">Brazil</option>
+              <option value="ru">Russia</option>
+              <option value="tr1">Turkey</option>
+            </select>
             <input
               className="main__input"
               type="text"
