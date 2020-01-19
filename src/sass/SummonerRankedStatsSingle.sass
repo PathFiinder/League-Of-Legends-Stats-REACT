@@ -1,4 +1,4 @@
-.summonerRankedStats__singleItem, .singleItem
+.singleItem
     flex-basis: 33.3%
     overflow: hidden
     position: relative
@@ -11,6 +11,11 @@
         height: 80%
         width: 1px
         background-color: rgba(0,0,0,0.4)
+    &--last
+        &:after
+            content: ""
+            height: 0px
+            width: 0px
     .singleItem__rankEmblem
         position: absolute
         top: 50%

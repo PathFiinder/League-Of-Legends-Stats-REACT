@@ -26,7 +26,7 @@ class SummonerRankedStatsTTF extends Component{
         return (  
             <>
             {this.state.ttfData.length !== 0 ?
-                 <div className="summonerRankedStats__singleItem singleItem">
+                 <div className="summonerRankedStats__singleItem singleItem singleItem--last">
                  <img src={`./images/emblems/Emblem_${this.state.ttfData[0].tier}.png`} alt="Ranked emblem" className="singleItem__rankEmblem"/>
                  <div className="singleItem__container">
                      <p className="singleItem__queueType">Ranked TTF</p>
