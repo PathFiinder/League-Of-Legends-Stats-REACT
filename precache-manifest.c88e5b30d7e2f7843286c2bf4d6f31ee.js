@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "79a2df551a868e2d10c38f1e071aa4f9",
+    "revision": "a75146bac9b73cd8587c11a66240a3c6",
     "url": "/League-Of-Legends-Stats-REACT/index.html"
   },
   {
-    "revision": "2a856cd8e81167af35b4",
+    "revision": "ddb9419126293e1a0e19",
     "url": "/League-Of-Legends-Stats-REACT/static/css/main.a1166b91.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/League-Of-Legends-Stats-REACT/static/js/2.9fa20a6c.chunk.js.LICENSE"
   },
   {
-    "revision": "2a856cd8e81167af35b4",
-    "url": "/League-Of-Legends-Stats-REACT/static/js/main.780002f3.chunk.js"
+    "revision": "ddb9419126293e1a0e19",
+    "url": "/League-Of-Legends-Stats-REACT/static/js/main.2094cda9.chunk.js"
   },
   {
     "revision": "d4aee8d4652875d201f1",
