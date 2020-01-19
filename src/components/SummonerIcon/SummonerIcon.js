@@ -19,9 +19,7 @@ class SummonerIcon extends Component {
                     data.forEach(ele => {
                         if(ele.queueType === "RANKED_SOLO_5x5"){
                             soloRank.push({"tier": ele.tier, "rank": ele.rank, "points": ele.leaguePoints})
-                        } else {
-                            soloRank.push({"tier": "UNRANKED", "rank": "", "points": ""})
-                        }
+                        } 
                     })
                     this.setState({rank: soloRank, summonerId: this.props.summoner.id})
                 } else {
