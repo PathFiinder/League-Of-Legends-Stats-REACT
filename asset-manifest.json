@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/League-Of-Legends-Stats-REACT/static/css/main.a1166b91.chunk.css",
-    "main.js": "/League-Of-Legends-Stats-REACT/static/js/main.2094cda9.chunk.js",
-    "main.js.map": "/League-Of-Legends-Stats-REACT/static/js/main.2094cda9.chunk.js.map",
+    "main.css": "/League-Of-Legends-Stats-REACT/static/css/main.f7d61cb7.chunk.css",
+    "main.js": "/League-Of-Legends-Stats-REACT/static/js/main.2740291b.chunk.js",
+    "main.js.map": "/League-Of-Legends-Stats-REACT/static/js/main.2740291b.chunk.js.map",
     "runtime-main.js": "/League-Of-Legends-Stats-REACT/static/js/runtime-main.ee3092a0.js",
     "runtime-main.js.map": "/League-Of-Legends-Stats-REACT/static/js/runtime-main.ee3092a0.js.map",
     "static/js/2.9fa20a6c.chunk.js": "/League-Of-Legends-Stats-REACT/static/js/2.9fa20a6c.chunk.js",
     "static/js/2.9fa20a6c.chunk.js.map": "/League-Of-Legends-Stats-REACT/static/js/2.9fa20a6c.chunk.js.map",
     "index.html": "/League-Of-Legends-Stats-REACT/index.html",
-    "precache-manifest.c88e5b30d7e2f7843286c2bf4d6f31ee.js": "/League-Of-Legends-Stats-REACT/precache-manifest.c88e5b30d7e2f7843286c2bf4d6f31ee.js",
+    "precache-manifest.a9a9e3466d8e5963056384e9611a0f91.js": "/League-Of-Legends-Stats-REACT/precache-manifest.a9a9e3466d8e5963056384e9611a0f91.js",
     "service-worker.js": "/League-Of-Legends-Stats-REACT/service-worker.js",
-    "static/css/main.a1166b91.chunk.css.map": "/League-Of-Legends-Stats-REACT/static/css/main.a1166b91.chunk.css.map",
+    "static/css/main.f7d61cb7.chunk.css.map": "/League-Of-Legends-Stats-REACT/static/css/main.f7d61cb7.chunk.css.map",
     "static/js/2.9fa20a6c.chunk.js.LICENSE": "/League-Of-Legends-Stats-REACT/static/js/2.9fa20a6c.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.ee3092a0.js",
     "static/js/2.9fa20a6c.chunk.js",
-    "static/css/main.a1166b91.chunk.css",
-    "static/js/main.2094cda9.chunk.js"
+    "static/css/main.f7d61cb7.chunk.css",
+    "static/js/main.2740291b.chunk.js"
   ]
 }
