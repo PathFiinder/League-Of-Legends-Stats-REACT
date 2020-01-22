@@ -17,6 +17,9 @@ class SummonerRankedStatsTTF extends Component{
             if(data.length !== 0){
                 ttfData.push({"tier": data[0].tier,"rank": data[0].rank, "points": data[0].leaguePoints,"wins": data[0].wins})
                 this.setState({summonerId: this.props.summonerId, ttfData: ttfData})
+            } else if (data.length === 0){
+                ttfData.push({"tier": "UNRANKED","rank": "", "points": 0,"wins": 0})
+                this.setState({summonerId: this.props.summonerId, ttfData: ttfData})
             }
         })
     }

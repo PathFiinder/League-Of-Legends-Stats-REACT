@@ -15,7 +15,7 @@ class App extends Component {
       summonerData: [],
       champNames: []
     };
-    this.apiKey = "RGAPI-57460ff3-96c4-4246-9a0b-4b3e6bfc0c6c";
+    this.apiKey = "RGAPI-10c3f1bf-4434-4b10-89e7-5df09e359f16";
     this.cors = "https://cors-anywhere.herokuapp.com/";
   }
 
@@ -61,6 +61,7 @@ class App extends Component {
   handleClick = () => {
     const insertNickname = document.querySelector(".main__input").value;
 
+    if(insertNickname.length !== 0){
     fetch(
       `${this.cors}https://${this.state.region}.api.riotgames.com/lol/summoner/v4/summoners/by-name/${insertNickname}?api_key=${this.apiKey}`
     )
@@ -91,6 +92,9 @@ class App extends Component {
         });
       })
       .catch(error => console.log(error));
+    } else {
+      this.setState({ status: 0, serverResp: "Insert summoner nickname" });
+    }
   };
 
   handleKeyPress = event => {
