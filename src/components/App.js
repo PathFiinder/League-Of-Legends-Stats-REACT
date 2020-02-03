@@ -15,7 +15,7 @@ class App extends Component {
       summonerData: [],
       champNames: []
     };
-    this.apiKey = "RGAPI-10c3f1bf-4434-4b10-89e7-5df09e359f16";
+    this.apiKey = "RGAPI-7b930d20-a303-4134-bc69-1514a2441a77";
     this.cors = "https://cors-anywhere.herokuapp.com/";
   }
 
