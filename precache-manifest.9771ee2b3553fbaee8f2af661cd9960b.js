@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "97af9bf406df76d174c57091ee25a507",
+    "revision": "edc0092f3aed922b45460a1b6fe64375",
     "url": "/League-Of-Legends-Stats-REACT/index.html"
   },
   {
