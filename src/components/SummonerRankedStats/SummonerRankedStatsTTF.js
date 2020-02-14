@@ -11,9 +11,18 @@ class SummonerRankedStatsTTF extends Component{
 
     fetchRankedStats = () => {
         const ttfData = [];
-        fetch(`${this.props.cors}https://${this.props.region}.api.riotgames.com/tft/league/v1/entries/by-summoner/${this.props.summonerId}?api_key=${this.props.apiKey}`)
-        .then(resp => resp.json())
+        //Waiting for APP api Key 
+        fetch(`${this.props.cors}https://${this.props.region}.api.riotgames.com/tft/summoner/v1/summoners/by-name/${this.props.summonerName}?api_key=${this.props.apiKey}`)
+        .then(resp0 => resp0.json())
+        .then(data0 => {
+            if(data0.status.status_code !== 403) fetch(`${this.props.cors}https://${this.props.region}.api.riotgames.com/tft/league/v1/entries/by-summoner/${data0.id}?api_key=${this.props.apiKey}`)
+            
+            }
+        )
+        .catch(err => console.log(err))
+        .then(resp => resp !== undefined ? resp.json() : [])
         .then(data => {
+            
             if(data.length !== 0){
                 ttfData.push({"tier": data[0].tier,"rank": data[0].rank, "points": data[0].leaguePoints,"wins": data[0].wins})
                 this.setState({summonerId: this.props.summonerId, ttfData: ttfData})
@@ -22,6 +31,7 @@ class SummonerRankedStatsTTF extends Component{
                 this.setState({summonerId: this.props.summonerId, ttfData: ttfData})
             }
         })
+        
     }
 
     render(){

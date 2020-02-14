@@ -7,7 +7,8 @@ class SummonerRankedStats extends Component {
         super(props);
         this.state = {
             summonerId: "",
-            rankedStats: []
+            rankedStats: [],
+            summonerName: ""
         }
     }
 
@@ -25,7 +26,7 @@ class SummonerRankedStats extends Component {
                                    "wins": ele.wins,
                                    "losses": ele.losses})
                 )
-                this.setState({rankedStats: soloRank, summonerId: this.props.summoner.id})
+                this.setState({rankedStats: soloRank, summonerId: this.props.summoner.id, summonerName: this.props.summoner.name})
             })      
     }
 
@@ -37,7 +38,7 @@ class SummonerRankedStats extends Component {
             {this.state.rankedStats.length !== 0 ? 
                 <div className="summonerData__item summonerRankedStats">
                 {singleRank}
-                {<SummonerRankedStatsTTF summonerId={this.state.summonerId} cors={this.props.cors} region={this.props.region} apiKey={this.props.apiKey}/>
+                {<SummonerRankedStatsTTF summonerId={this.state.summonerId} summonerName={this.state.summonerName} cors={this.props.cors} region={this.props.region} apiKey={this.props.apiKey}/>
                 }
             </div>
             : ""
