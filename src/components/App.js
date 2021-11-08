@@ -16,7 +16,8 @@ class App extends Component {
       champNames: []
     };
     this.apiKey = "RGAPI-7b930d20-a303-4134-bc69-1514a2441a77";
-    this.cors = "https://cors-anywhere.herokuapp.com/";
+    // this.cors = "https://cors-anywhere.herokuapp.com/";
+   this.cors=""
   }
 
   componentDidMount() {
@@ -60,7 +61,7 @@ class App extends Component {
 
   handleClick = () => {
     const insertNickname = document.querySelector(".main__input").value;
-
+    
     if(insertNickname.length !== 0){
     fetch(
       `${this.cors}https://${this.state.region}.api.riotgames.com/lol/summoner/v4/summoners/by-name/${insertNickname}?api_key=${this.apiKey}`
@@ -85,6 +86,7 @@ class App extends Component {
         }
       })
       .then(data => {
+        console.log(data)
         this.setState({
           status: 200,
           serverResp: "Ok",

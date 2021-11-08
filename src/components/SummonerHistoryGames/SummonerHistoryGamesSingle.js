@@ -20,37 +20,44 @@ class SummonerHistoryGamesSingle extends Component{
 
 
     fetchGameData = () => {
-        fetch(`${this.props.cors}https://${this.props.region}.api.riotgames.com/lol/match/v4/matches/${this.props.matchId}?api_key=${this.props.apiKey}`)
+        console.log(this.props.matchId)
+        fetch(`${this.props.cors}https://europe.api.riotgames.com/lol/match/v5/matches/${this.props.matchId}?api_key=${this.props.apiKey}`)
             .then(response => response.json())
             .then(data => {
+                console.log(data)
                 const gameData = [];
-                Object.entries(data).forEach(([key,value]) => gameData.push({"name": key,"value": value}))
-                this.setState({matchId: this.props.matchId, gameData: gameData})
+                // Object.entries(data).forEach(([key,value]) => gameData.push({"name": key,"value": value}))
+                this.setState({matchId: this.props.matchId, gameData: data.info})
                 return gameData;
             })
             .then(gameData => {
                 const teamOne = [];
                 const teamTwo = [];
-                gameData[11].value.forEach(single => {
-                    if(single.teamId === 100) {
-                        teamOne.push({"championId": single.championId,
-                                    "participantId": single.participantId,
-                                    "spell1Id": single.spell1Id,
-                                    "spell2Id": single.spell2Id,
-                                    "stats": single.stats,
-                                    "teamId": single.teamId,
-                                    "lane": single.timeline.lane,
-                                    "role": single.timeline.role})
-                    } else if (single.teamId === 200) {
-                        teamTwo.push({"championId": single.championId,
-                                    "participantId": single.participantId,
-                                    "spell1Id": single.spell1Id,
-                                    "spell2Id": single.spell2Id,
-                                    "stats": single.stats,
-                                    "teamId": single.teamId,
-                                    "lane": single.timeline.lane,
-                                    "role": single.timeline.role})
+                // gameData[11].value.forEach(single => {
+                //     if(single.teamId === 100) {
+                //         teamOne.push({"championId": single.championId,
+                //                     "participantId": single.participantId,
+                //                     "spell1Id": single.spell1Id,
+                //                     "spell2Id": single.spell2Id,
+                //                     "stats": single.stats,
+                //                     "teamId": single.teamId,
+                //                     "lane": single.timeline.lane,
+                //                     "role": single.timeline.role})
+                //     } else if (single.teamId === 200) {
+                //         teamTwo.push({"championId": single.championId,
+                //                     "participantId": single.participantId,
+                //                     "spell1Id": single.spell1Id,
+                //                     "spell2Id": single.spell2Id,
+                //                     "stats": single.stats,
+                //                     "teamId": single.teamId,
+                //                     "lane": single.timeline.lane,
+                //                     "role": single.timeline.role})
+                //     }
+                gameData[10].forEach(participant => {
+                    if (participant.teamId === 100) {
+
                     }
+
                 })
                 const teamOneParticipants = [];
                 const teamTwoParticipants = [];

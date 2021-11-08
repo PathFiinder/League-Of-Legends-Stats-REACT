@@ -13,16 +13,15 @@ class SummonerHistoryGames extends Component {
     }
 
     fetchHistoryGamesData = () => {
-        fetch(`${this.props.cors}https://${this.props.region}.api.riotgames.com/lol/match/v4/matchlists/by-account/${this.props.summoner.accountId}?api_key=${this.props.apiKey}`)
+        fetch(`${this.props.cors}https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/${this.props.summoner.puuid}/ids?start=0&count=20&api_key=${this.props.apiKey}`)
             .then(resp => resp.json())
             .then(data => {
-                //console.log(data)
-                if(data.matches !== undefined){
-                const history = [];
-                data.matches.forEach((singleGame,index) => {
-                    if(index <= 9) history.push(singleGame)
-                })
-                this.setState({summonerId: this.props.summoner.id, gameHistory: history})
+                if(data !== undefined){
+                    const history = [];
+                    data.forEach((singleGame,index) => {
+                        if(index <= 9) history.push(singleGame)
+                    })
+                    this.setState({summonerId: this.props.summoner.id, gameHistory: history})
                 } else {
                     this.setState({summonerId: this.props.summoner.id, gameHistory: []})
                 }
@@ -31,7 +30,7 @@ class SummonerHistoryGames extends Component {
 
     render(){
         if(this.props.summoner.id !== "" && this.state.summonerId !== this.props.summoner.id) this.fetchHistoryGamesData();
-        const singleGame = this.state.gameHistory.map((single,index) => <SummonerHistoryGamesSingle key={single.gameId} matchId={single.gameId} champion={single.champion}  patch={this.props.patch} cors={this.props.cors} region={this.props.region} apiKey={this.props.apiKey} champNames={this.props.champNames} nick={this.props.summoner.name} icon={this.props.summoner.profileIconId}/>)
+        const singleGame = this.state.gameHistory.map((single,index) => <SummonerHistoryGamesSingle key={single} matchId={single} patch={this.props.patch} cors={this.props.cors} region={this.props.region} apiKey={this.props.apiKey} champNames={this.props.champNames} nick={this.props.summoner.name} icon={this.props.summoner.profileIconId}/>)
         return(
             <React.Fragment>
                 {this.state.gameHistory.length !== 0 ? 

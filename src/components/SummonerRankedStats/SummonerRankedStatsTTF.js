@@ -11,27 +11,33 @@ class SummonerRankedStatsTTF extends Component{
 
     fetchRankedStats = () => {
         const ttfData = [];
-        //Waiting for APP api Key 
-        fetch(`${this.props.cors}https://${this.props.region}.api.riotgames.com/tft/summoner/v1/summoners/by-name/${this.props.summonerName}?api_key=${this.props.apiKey}`)
-        .then(resp0 => resp0.json())
-        .then(data0 => {
-            if(data0.status.status_code !== 403) fetch(`${this.props.cors}https://${this.props.region}.api.riotgames.com/tft/league/v1/entries/by-summoner/${data0.id}?api_key=${this.props.apiKey}`)
-            
-            }
-        )
-        .catch(err => console.log(err))
-        .then(resp => resp !== undefined ? resp.json() : [])
-        .then(data => {
-            
-            if(data.length !== 0){
-                ttfData.push({"tier": data[0].tier,"rank": data[0].rank, "points": data[0].leaguePoints,"wins": data[0].wins})
-                this.setState({summonerId: this.props.summonerId, ttfData: ttfData})
-            } else if (data.length === 0){
-                ttfData.push({"tier": "UNRANKED","rank": "", "points": 0,"wins": 0})
-                this.setState({summonerId: this.props.summonerId, ttfData: ttfData})
-            }
-        })
-        
+        //Waiting for APP api Key
+
+        // fetch(`${this.props.cors}https://${this.props.region}.api.riotgames.com/tft/summoner/v1/summoners/by-name/${this.props.summonerName}?api_key=${this.props.apiKey}`)
+        // .then(resp0 => resp0.json())
+        // .then(data0 => {
+        //     console.log(data0)
+        //     if(data0.status.status_code !== 403) fetch(`${this.props.cors}https://${this.props.region}.api.riotgames.com/tft/league/v1/entries/by-summoner/${data0.id}?api_key=${this.props.apiKey}`)
+        //         return;
+        //     }
+        // )
+        // .catch(err => console.log(err))
+        // .then(resp => resp !== undefined ? resp.json() : [])
+        // .then(data => {
+        //
+        //     if(data.length !== 0){
+        //         ttfData.push({"tier": data[0].tier,"rank": data[0].rank, "points": data[0].leaguePoints,"wins": data[0].wins})
+        //         this.setState({summonerId: this.props.summonerId, ttfData: ttfData})
+        //     } else if (data.length === 0){
+        //         console.log('here')
+        //         ttfData.push({"tier": "UNRANKED","rank": "", "points": 0,"wins": 0})
+        //         this.setState({summonerId: this.props.summonerId, ttfData: ttfData})
+        //     }
+        // })
+       fetch('').then(data =>  {
+           ttfData.push({"tier": "UNRANKED","rank": "", "points": 0,"wins": 0})
+           this.setState({summonerId: this.props.summonerId, ttfData: ttfData})
+       })
     }
 
     render(){
