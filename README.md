@@ -9,9 +9,6 @@ Tech Work used:
 - RioT API (https://developer.riotgames.com/)
 - RioT API Libraries - Data Dragon (https://riot-api-libraries.readthedocs.io/en/latest/ddragon.html)
 
-Live: https://pathfiinder.github.io/League-Of-Legends-Stats-REACT/
-
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
